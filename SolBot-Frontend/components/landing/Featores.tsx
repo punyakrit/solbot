@@ -29,35 +29,59 @@ function Features() {
             description="Manage portfolios directly on Discord"
           >
             <div className="aspect-video">
-
-            <div className="flex justify-center items-center h-full space-x-3">
-              <Wallet className="w-20 h-20 text-lime-400 border border-white p-4 rounded-full" />
-              <Plus className="" />
-              <User className="w-20 h-20 text-lime-400 border border-white p-4 rounded-full" />
-            </div>
+              <div className="flex justify-center items-center h-full space-x-3">
+                <Wallet className="w-20 h-20 text-lime-400 border border-white p-4 rounded-full" />
+                <Plus className="" />
+                <User className="w-20 h-20 text-lime-400 border border-white p-4 rounded-full" />
+              </div>
             </div>
           </Card>
           <Card
             title="Real-Time Swaps & Prices"
             description="Simulate or execute trades instantly with accurate, on-chain
                 data."
-          />
+          >
+            <div className="aspect-video flex justify-center items-center">
+              <p className="text-4xl font-extrabold text-white/20 text-center">
+                Instant{" "}
+                <span className="text-transparent bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text">
+                  Token Swaps
+                </span>{" "}
+                with On-Chain Data
+              </p>
+            </div>
+          </Card>
           <Card
             title="Instant Commands"
             description="Use Discord-native commands to take action fast—no tab switching
                 needed."
-          />
+          >
+            <div className="aspect-video ">
+              <div className="relative">
+                <div className="bg-neutral-900 border border-white/20 p-4 font-bold text-2xl rounded-4xl absolute top-0 left-0">
+                  <span>/buy</span>
+                  <span> Sol</span>
+                  <span> 10</span>{" "}
+                </div>
+                <div className="bg-neutral-900 border border-white/20 p-4 font-bold text-2xl rounded-4xl absolute top-30 right-0">
+                  <span>/price</span>
+                  <span> Solana</span>
+                </div>
+              </div>
+            </div>
+          </Card>
         </div>
 
-        <div className="">
-          {features.map((feature) => (
-            <div key={feature} className="px-2">
-              <span className="flex border-white/30 border w-min text-nowrap px-3 py-2 rounded-full">
-                {feature}
-              </span>
-            </div>
-          ))}
-        </div>
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+  {features.map((feature) => (
+    <div key={feature}>
+      <span className="border border-white/30 bg-neutral-900 inline-flex text-nowrap px-3 py-2 rounded-2xl text-sm">
+        {feature}
+      </span>
+    </div>
+  ))}
+</div>
+
       </div>
     </section>
   );
