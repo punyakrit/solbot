@@ -1,0 +1,1 @@
+{"root":["./src/index.ts","./src/commands/accountcommand.ts","./src/commands/buycommand.ts","./src/commands/pricecommand.ts","./src/commands/registercommands.ts","./src/commands/sellcommand.ts","./src/commands/startcommand.ts","./src/commands/tradecommand.ts","./src/handlers/buttonhandler.ts","./src/handlers/modalhandler.ts"],"version":"5.8.3"}
