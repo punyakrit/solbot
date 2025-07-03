@@ -20,13 +20,14 @@ function Features() {
             Features
           </div>
         </div>
-        <h2 className="text-5xl font-medium text-center py-8">
+        <h2 className="text-5xl lg:text-6xl font-medium text-center py-8">
           Where trading meets <span className="text-lime-400"> simplicity</span>
         </h2>
-        <div className="mt-10 grid grid-cols-1 gap-8">
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-3 gap-8 ">
           <Card
             title="Wallet-Linked Accounts"
             description="Manage portfolios directly on Discord"
+            className="md:col-span-2 lg:col-span-1 "
           >
             <div className="aspect-video">
               <div className="flex justify-center items-center h-full space-x-3">
@@ -40,6 +41,7 @@ function Features() {
             title="Real-Time Swaps & Prices"
             description="Simulate or execute trades instantly with accurate, on-chain
                 data."
+            className={"md:col-span-2 lg:col-span-1"}
           >
             <div className="aspect-video flex justify-center items-center">
               <p className="text-4xl font-extrabold text-white/20 text-center">
@@ -55,6 +57,7 @@ function Features() {
             title="Instant Commands"
             description="Use Discord-native commands to take action fast—no tab switching
                 needed."
+            className={"md:col-span-2 md:col-start-2 lg:col-span-1 "}
           >
             <div className="aspect-video ">
               <div className="relative">
@@ -63,7 +66,7 @@ function Features() {
                   <span> Sol</span>
                   <span> 10</span>{" "}
                 </div>
-                <div className="bg-neutral-900 border border-white/20 p-4 font-bold text-2xl rounded-4xl absolute top-30 right-0">
+                <div className="bg-neutral-900 border border-white/20 p-4 font-bold text-2xl rounded-4xl absolute top-30 lg:top-25 right-0">
                   <span>/price</span>
                   <span> Solana</span>
                 </div>
@@ -73,15 +76,14 @@ function Features() {
         </div>
 
         <div className="mt-8 flex flex-wrap justify-center gap-4">
-  {features.map((feature) => (
-    <div key={feature}>
-      <span className="border border-white/30 bg-neutral-900 inline-flex text-nowrap px-3 py-2 rounded-2xl text-sm">
-        {feature}
-      </span>
-    </div>
-  ))}
-</div>
-
+          {features.map((feature) => (
+            <div key={feature}>
+              <span className="border border-lime-400/40 text-lime-400 bg-neutral-900 inline-flex text-nowrap px-3 py-2 rounded-2xl text-sm">
+                {feature}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -91,11 +93,14 @@ type CardProps = {
   title: string;
   description: string;
   children?: React.ReactNode;
+  className?: String;
 };
 
-function Card({ title, description, children }: CardProps) {
+function Card({ title, description, children, className }: CardProps) {
   return (
-    <div className="bg-neutral-900 border border-white/10 rounded-3xl p-6">
+    <div
+      className={`bg-neutral-900 border border-white/10 rounded-3xl p-6 ${className}`}
+    >
       <div className="aspect-video">{children}</div>
       <div>
         <h3 className="text-3xl font-medium mt-6">{title}</h3>
