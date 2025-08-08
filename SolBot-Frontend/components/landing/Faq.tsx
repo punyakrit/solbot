@@ -29,6 +29,7 @@ export const faqs = [
 ];
 
 function Faq() {
+  const selectedIndex = 0;
   return (
     <section className="py-24">
       <div className="container mx-auto">
@@ -37,11 +38,11 @@ function Faq() {
             FAQs
           </div>
         </div>
-        <h2 className="text-5xl font-medium text-center mt-6">
+        <h2 className="text-5xl md:text-6xl font-medium text-center mt-6 max-w-xl mx-auto">
           Questions? We've got <span className="text-lime-400"> answers</span>
         </h2>
-        <div className="flex flex-col gap-6 mt-12">
-          {faqs.map((faq) => (
+        <div className="flex flex-col gap-6 mt-12 max-w-xl mx-auto">
+          {faqs.map((faq, faqIndex) => (
             <div
               key={faq.question}
               className="bg-neutral-900 rounded-2xl border border-white/10 p-6"
@@ -50,7 +51,9 @@ function Faq() {
                 <div className="font-medium">{faq.question}</div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-5 h-5 text-lime-400"
+                  className={`w-5 h-5 text-lime-400 flex-shrink-0 ${
+                    selectedIndex === faqIndex ? "rotate-45" : ""
+                  }`}
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -63,7 +66,11 @@ function Faq() {
                   />
                 </svg>
               </div>
-              <div className="mt-6">
+              <div
+                className={`mt-6 ${
+                  selectedIndex === faqIndex ? "block" : "hidden"
+                }`}
+              >
                 <div className="text-white/50">{faq.answer}</div>
               </div>
             </div>
